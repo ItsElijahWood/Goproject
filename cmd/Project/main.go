@@ -1,11 +1,13 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/ItsElijahWood/Goproject/internal"
+	"log"
 )
 
 func main() {
-    fmt.Println(internal.Test)
+    log.Println("Listening on :8080...")
+    err := routes.startServer()
+    if err != nil {
+        log.Fatal(err)
+    }
 }
