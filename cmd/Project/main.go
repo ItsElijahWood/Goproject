@@ -4,13 +4,18 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ItsElijahWood/Goproject/internal/routes"
+	iform "github.com/ItsElijahWood/Goproject/cmd/Project/data"
+	database "github.com/ItsElijahWood/Goproject/internal/database"
+	routes "github.com/ItsElijahWood/Goproject/internal/routes"
 )
 
 func main() {
-	log.Println("Setting up routes...")
+    // imported thru internals
+    database.ConnectToMongoDB() 
+	routes.SetupRoutes() 
 
-	routes.SetupRoutes() // importing routes from internals
+    // handle forms db
+    http.HandleFunc("/submit", iform.IForm)
 
 	log.Println("Listening on :80...")
 	err := http.ListenAndServe(":80", nil) 
