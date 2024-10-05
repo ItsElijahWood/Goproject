@@ -32,8 +32,8 @@ func IForm(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	collection := database.Client.Database("Forms").Collection("iForm") // Accessing the Client here
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	collection := database.Client.Database("Forms").Collection("iForm") 
+	ctx, cancel := context.WithTimeout(context.Background(), 10 *time.Second)
 	defer cancel()
 
 	doc := bson.M{"name": name, "email": email, "age": ageInt}
