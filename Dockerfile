@@ -10,8 +10,7 @@ COPY go.mod ./
 RUN go mod download
 
 # copy local files to container
-COPY /cmd/Project/main.go ./cmd/Project/main.go
-COPY /cmd/Project/static ./cmd/Project/static
+COPY /cmd/Project/ ./cmd/Project/
 COPY /internal ./internal
 COPY . .
 
