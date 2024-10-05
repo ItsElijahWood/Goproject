@@ -9,7 +9,8 @@ import (
 
 func main() {
 	log.Println("Setting up routes...")
-	routes.SetupRoutes() 
+
+	routes.SetupRoutes() // importing routes from internals
 
 	log.Println("Listening on :80...")
 	err := http.ListenAndServe(":80", nil) 

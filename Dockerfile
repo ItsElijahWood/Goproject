@@ -9,6 +9,7 @@ COPY go.mod ./
 # Fetch dependencies
 RUN go mod download
 
+# copy local files to container
 COPY /cmd/Project/main.go ./cmd/Project/main.go
 COPY /cmd/Project/static ./cmd/Project/static
 COPY /internal/routes ./internal/routes
