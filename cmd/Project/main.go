@@ -8,11 +8,12 @@ import (
 )
 
 func main() {
-    routes.SetupRoutes()
+	log.Println("Setting up routes...")
+	routes.SetupRoutes() 
 
-    log.Println("Listening on :8080...")
-    err := http.ListenAndServe(":80", nil)
-    if err != nil {
-        log.Fatal(err)
-    }
+	log.Println("Listening on :80...")
+	err := http.ListenAndServe(":80", nil) 
+	if err != nil {
+		log.Fatal(err)
+	}
 }
